@@ -1,8 +1,13 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import AnimatedContent from "@/app/components/ui/AnimatedContent";
 import SectionLabel from "@/app/components/ui/SectionLabel";
 import CountUp from "@/app/components/ui/CountUp";
+
+const FranceMap = dynamic(() => import("@/app/components/ui/FranceMap"), {
+  ssr: false,
+});
 
 const links = [
   {
@@ -154,8 +159,34 @@ export default function AboutContact() {
         </AnimatedContent>
       </div>
 
+      {/* Location + Map */}
+      <AnimatedContent delay={0.1} duration={0.6}>
+        <div className="mt-24 border-t border-border pt-16 mb-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Text left */}
+          <div>
+            <SectionLabel className="mb-4 block">Location</SectionLabel>
+            <p
+              className="font-display font-[800] leading-none text-text mb-4"
+              style={{ fontSize: "var(--text-display)" }}
+            >
+              Paris,
+              <br />
+              France
+            </p>
+            <p className="text-text-muted font-body text-sm">
+              UTC+1 · Available for remote work worldwide
+            </p>
+          </div>
+
+          {/* Map right */}
+          <div className="relative h-[280px] bg-surface border border-border overflow-hidden">
+            <FranceMap />
+          </div>
+        </div>
+      </AnimatedContent>
+
       {/* Footer */}
-      <div className="mt-24 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+      <div className="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <span className="text-text-muted text-sm font-body">
           &copy; 2025 Diego Lacroix
         </span>

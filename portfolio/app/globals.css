@@ -43,6 +43,56 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Leaflet overrides — force dark background, neutralise styles par défaut */
+.leaflet-container {
+  background: #0a0a0a !important;
+}
+.leaflet-tile-pane {
+  filter: contrast(1.05) brightness(0.97);
+}
+
+/* Paris pulse marker */
+.leaflet-marker-icon {
+  overflow: visible !important;
+}
+.paris-marker {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+.paris-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #E8FF47;
+  z-index: 2;
+}
+.paris-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid #E8FF47;
+  animation: paris-pulse 2.4s ease-out infinite;
+}
+.paris-ring-1 {
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+}
+.paris-ring-2 {
+  width: 20px;
+  height: 20px;
+  animation-delay: 1.2s;
+}
+@keyframes paris-pulse {
+  0%   { transform: scale(0.5); opacity: 0.8; }
+  100% { transform: scale(2);   opacity: 0; }
+}
+
 /* Scroll arrow bounce */
 @keyframes bounce-arrow {
   0%, 100% {
