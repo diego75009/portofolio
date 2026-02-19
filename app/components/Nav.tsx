@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import { lenisInstance } from "@/app/components/ui/LenisProvider";
 
 const navLinks = [
   { label: "Work", href: "#work" },
@@ -70,7 +71,13 @@ export default function Nav() {
     e.preventDefault();
     setMenuOpen(false);
     const id = href.replace("#", "");
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (lenisInstance) {
+      lenisInstance.scrollTo(el, { offset: -80 });
+    } else {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const isActive = (href: string) =>
