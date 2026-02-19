@@ -15,13 +15,13 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Diego Lacroix — Frontend Developer",
+  title: "Diego Lacroix — Fullstack Developer",
   description:
-    "Frontend developer crafting fast, modern web experiences with React, Next.js and TypeScript.",
+    "Fullstack developer crafting fast, modern web experiences with React, Next.js and TypeScript.",
   openGraph: {
-    title: "Diego Lacroix — Frontend Developer",
+    title: "Diego Lacroix — Fullstack Developer",
     description:
-      "Frontend developer crafting fast, modern web experiences with React, Next.js and TypeScript.",
+      "Fullstack developer crafting fast, modern web experiences with React, Next.js and TypeScript.",
     type: "website",
   },
 };
