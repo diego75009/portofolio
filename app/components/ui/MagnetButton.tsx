@@ -1,7 +1,5 @@
 "use client";
 
-import Magnet from "./Magnet";
-
 interface MagnetButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
@@ -29,19 +27,17 @@ export default function MagnetButton({
 
   const combined = `${baseClasses} ${variantClasses} ${className}`;
 
-  const inner = href ? (
-    <a href={href} download={download} className={combined}>
-      {children}
-    </a>
-  ) : (
+  if (href) {
+    return (
+      <a href={href} download={download} className={combined}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
     <button onClick={onClick} className={combined}>
       {children}
     </button>
-  );
-
-  return (
-    <Magnet padding={60} magnetStrength={2.5}>
-      {inner}
-    </Magnet>
   );
 }
