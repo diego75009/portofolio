@@ -14,18 +14,26 @@ import LenisProvider from "@/app/components/ui/LenisProvider";
 import ScrollProgress from "@/app/components/ui/ScrollProgress";
 import LoadingScreen from "@/app/components/ui/LoadingScreen";
 
+// Persists across client-side navigations, resets on full page refresh
+let hasShownLoading = false;
+
 export default function Home() {
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(hasShownLoading);
+
+  const handleLoadComplete = () => {
+    hasShownLoading = true;
+    setLoaded(true);
+  };
 
   return (
     <>
       {/* Scroll progress bar */}
       <ScrollProgress />
 
-      {/* Loading screen */}
+      {/* Loading screen — only on first visit */}
       <AnimatePresence>
         {!loaded && (
-          <LoadingScreen onComplete={() => setLoaded(true)} />
+          <LoadingScreen onComplete={handleLoadComplete} />
         )}
       </AnimatePresence>
 

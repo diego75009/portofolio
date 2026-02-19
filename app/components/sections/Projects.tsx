@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SpotlightCard from "@/app/components/ui/SpotlightCard";
@@ -92,9 +93,20 @@ export default function Projects() {
             >
               <SpotlightCard
                 spotlightColor="rgba(232, 255, 71, 0.07)"
-                className="!rounded-none !bg-surface !border-border !p-0 h-full"
+                className="!rounded-none !bg-surface !border-border !p-0 h-full !flex !flex-col"
               >
-                <div className="p-8 md:p-10 flex flex-col gap-4 h-full">
+                {project.images?.[0] && (
+                  <div className="relative w-full h-44 md:h-52 shrink-0 overflow-hidden border-b border-border">
+                    <Image
+                      src={project.images[0]}
+                      alt={`${project.title} preview`}
+                      fill
+                      className="object-cover object-top"
+                      sizes="(min-width: 768px) clamp(320px, 85vw, 720px), 100vw"
+                    />
+                  </div>
+                )}
+                <div className="p-8 md:p-10 flex flex-col gap-4 flex-1 min-h-0">
                   {/* Index + Year */}
                   <div className="flex items-center justify-between">
                     <span className="font-display font-[800] text-border text-4xl leading-none tabular-nums">
