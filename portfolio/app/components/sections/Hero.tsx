@@ -63,7 +63,7 @@ export default function Hero() {
         {/* Decrypted subtitle — scramble effect then reveal */}
         <div className="mb-10 md:mb-12">
           <DecryptedText
-            text="FRONTEND DEVELOPER"
+            text="FULLSTACK DEVELOPER"
             animateOn="view"
             sequential={true}
             revealDirection="start"

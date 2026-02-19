@@ -13,68 +13,110 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "saas-dashboard",
+    id: "personalb",
     year: "2024",
-    title: "SaaS Analytics Dashboard",
+    title: "PersonalB",
     description:
-      "Real-time analytics platform with customisable dashboards, role-based access and live data streaming. Built for scale — handles millions of events per day.",
-    longDescription: `A fully-featured analytics platform designed for high-throughput SaaS products. The architecture centers around a real-time event pipeline that ingests, aggregates, and serves metrics with sub-second latency.
+      "Générateur de CV ATS. Extraction CV via IA, génération de CV optimisé ATS, IA vocale & textuelle d'entraînement aux entretiens.",
+    longDescription: `PersonalB est une plateforme de génération de CV pensée pour maximiser le passage des filtres ATS (Applicant Tracking Systems). L'application extrait automatiquement les informations d'un CV existant grâce à l'IA, puis génère un document reformaté et optimisé selon les standards ATS.
 
-Key features include: drag-and-drop dashboard builder, role-based access control (RBAC) with team management, live data streaming via WebSockets, and a flexible query engine backed by Prisma and tRPC. The frontend leverages Next.js Server Components for fast initial loads while WebSocket connections keep widgets live.
+Au-delà du CV, PersonalB intègre un assistant d'entraînement aux entretiens disponible en mode vocal et textuel. L'IA pose des questions ciblées, analyse les réponses et fournit un feedback structuré pour aider les candidats à se préparer efficacement.
 
-The system is designed to handle millions of events per day through a combination of database indexing strategies, caching layers, and incremental static regeneration for non-realtime views.`,
-    tech: ["Next.js", "TypeScript", "Tailwind", "Prisma", "tRPC"],
-    link: "#",
-    github: "#",
-    images: [],
+L'objectif : transformer un profil brut en candidature compétitive, du CV au pitch oral.`,
+    tech: ["Next.js", "TypeScript", "OpenAI", "Tailwind CSS"],
+    github: "https://github.com/Bastian130/personalB",
     featured: true,
+    images: [
+      "/PersonalB/1.png",
+      "/PersonalB/2.png",
+      "/PersonalB/3.png",
+      "/PersonalB/4.png",
+      "/PersonalB/5.png",
+      "/PersonalB/6.png",
+      "/PersonalB/stationF.png",
+      "/PersonalB/station.jpg",
+      "/PersonalB/1763251145170.jpeg",
+      "/PersonalB/Untitled_1.1.2_1.66.3.jpg",
+      "/PersonalB/Untitled_1.1.2_1.67.2.jpg",
+    ],
   },
   {
-    id: "ecommerce",
+    id: "area",
     year: "2024",
-    title: "E-Commerce Platform",
+    title: "Area",
     description:
-      "Full-stack storefront with dynamic product pages, cart management, Stripe checkout and order tracking.",
-    longDescription: `A modern e-commerce platform built from the ground up with a focus on performance and conversion. Product pages are statically generated at build time with ISR for inventory updates, delivering sub-100ms TTFBs.
+      "IFTTT / Zapier like. Automatisation de workflows avec connecteurs Gmail, Discord, GitHub, Outlook, Drive, OneDrive. Architecture microservices.",
+    longDescription: `Area est une plateforme d'automatisation de workflows inspirée d'IFTTT et Zapier. Elle permet de connecter des services tiers entre eux via des règles If-This-Then-That définies par l'utilisateur.
 
-The cart is managed client-side with optimistic UI updates and persisted to a PostgreSQL database for cross-device continuity. Stripe integration covers one-time payments, subscription billing, and webhook-based order lifecycle management.
+Les connecteurs disponibles couvrent Gmail, Discord, GitHub, Outlook, Google Drive et OneDrive. L'architecture repose sur des microservices indépendants, chaque connecteur étant un service autonome exposant une API standardisée consommée par le moteur d'automations.
 
-Order tracking pages give customers real-time visibility into fulfilment status, powered by a lightweight event-sourcing pattern on the backend.`,
-    tech: ["React", "Node.js", "Stripe", "PostgreSQL"],
-    link: "#",
-    github: "#",
-    images: [],
+L'interface utilisateur permet de composer des workflows visuellement, de les tester et de suivre leur historique d'exécution en temps réel.`,
+    tech: ["React", "Node.js", "Docker", "PostgreSQL", "OAuth2"],
+    github: "https://github.com/danabenadel/Relay-platform",
+    images: [
+      "/relay/Screenshot_2025-11-02_at_14.18.45.png",
+      "/relay/Screenshot 2026-02-19 at 18-53-11 TEK3 • PROMO 2028 • EPITECH - Presentation.png",
+      "/relay/Screenshot 2026-02-19 at 18-58-57 Connexion - Relay - Relay.png",
+      "/relay/Screenshot 2026-02-19 at 18-59-38 Accueil - Relay - Relay.png",
+    ],
   },
   {
-    id: "design-system",
-    year: "2023",
-    title: "Component Design System",
+    id: "hackathon-vueling",
+    year: "2024",
+    title: "Hackathon Vueling — 2ème place",
     description:
-      "Themeable component library with 40+ primitives, accessibility-first, documented in Storybook and published on npm.",
-    longDescription: `An accessibility-first component library built with React and TypeScript, covering 40+ UI primitives from buttons and inputs to complex date pickers and data tables.
+      "App de traduction en temps réel pour faciliter les échanges multilingues entre équipage et passagers. 2ème place au hackathon Vueling.",
+    longDescription: `Dans le cadre d'un hackathon organisé par la compagnie aérienne Vueling, notre équipe a conçu et développé en 48h une application de traduction en temps réel destinée à fluidifier les échanges entre l'équipage et les passagers de nationalités différentes.
 
-Every component ships with full keyboard navigation, ARIA attributes, and screen-reader compatibility validated against WCAG 2.1 AA criteria. The theming system uses CSS custom properties so teams can apply brand tokens without forking the library.
+L'application détecte automatiquement la langue parlée, traduit les messages instantanément et les affiche des deux côtés de la conversation. Elle cible les situations à forte contrainte : annonces de bord, urgences médicales, demandes de service.
 
-Documentation lives in Storybook with interactive controls, accessibility audit panels, and copy-paste code examples. The package is published on npm with tree-shaking support and zero runtime dependencies beyond React.`,
-    tech: ["React", "TypeScript", "CSS", "Storybook"],
-    link: "#",
-    github: "#",
-    images: [],
+Résultat : 2ème place sur l'ensemble des équipes participantes.`,
+    tech: ["React Native", "TypeScript", "Translation API", "WebSockets"],
+    images: [
+      "/hackaton_vueling/image.jpg",
+      "/hackaton_vueling/photo.jpg",
+      "/hackaton_vueling/vueling.jpg",
+    ],
   },
   {
-    id: "mobile-app",
+    id: "jeb-incubator",
     year: "2023",
-    title: "Fitness Tracking App",
+    title: "Jeb Incubator",
     description:
-      "Cross-platform mobile app for workout logging and progress visualisation, with offline support and push notifications.",
-    longDescription: `A cross-platform fitness companion built with React Native and Expo, targeting iOS and Android from a single codebase. Users can log workouts, track personal records, and visualise strength and cardio trends over time.
+      "SaaS de mise en relation entre startups et investisseurs. Matching intelligent, espaces dédiés et gestion du pipeline de deals.",
+    longDescription: `Jeb Incubator est une plateforme SaaS conçue pour connecter des startups en phase de levée de fonds avec des investisseurs qualifiés.
 
-Offline-first architecture powered by a local SQLite database ensures the app remains fully functional without a connection. Changes sync to Supabase in the background when connectivity is restored, with conflict resolution handled via timestamps.
+Le système de matching analyse le profil des startups (secteur, stade, montant recherché) et les critères des investisseurs pour suggérer des opportunités pertinentes de part et d'autre. Chaque utilisateur dispose d'un espace dédié pour gérer son pipeline : gestion des contacts, suivi des échanges, partage de documents confidentiels.
 
-Push notifications remind users of scheduled sessions and celebrate milestones. The progress dashboard uses a custom SVG chart engine for smooth, 60fps animations on both platforms.`,
-    tech: ["React Native", "Expo", "Supabase"],
-    link: "#",
-    github: "#",
-    images: [],
+L'objectif est de réduire le temps et la friction liés à la mise en relation dans l'écosystème startup.`,
+    tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"],
+    images: [
+      "/JEB/image.png",
+      "/JEB/Capture d'écran du 2026-02-19 18-42-49.png",
+      "/JEB/Screenshot 2026-02-19 at 18-46-55 Jeb Incubator.png",
+    ],
+  },
+  {
+    id: "coachhub",
+    year: "2024",
+    title: "CoachHub",
+    description:
+      "Bureau de poche 5-en-1 pour coachs sportifs : programmation, messagerie, paiements, suivi de progression et gestion administrative.",
+    longDescription: `CoachHub est une plateforme tout-en-un conçue pour les coachs sportifs qui souhaitent professionnaliser leur activité et sortir du chaos de la gestion multi-outils.
+
+Elle regroupe cinq fonctionnalités essentielles au quotidien :
+
+— Programmation Sportive : création et envoi de séances d'entraînement personnalisées avec bibliothèque d'exercices.
+— Messagerie Privée : chat intégré pour centraliser les échanges et séparer vie professionnelle et personnelle (fini WhatsApp).
+— Gestion des Paiements : système sécurisé pour encaisser les coachings et générer les factures automatiquement.
+— Suivi de Progression : tableau de bord pour monitorer performances, charges et feedbacks des clients en temps réel.
+— Gestion Administrative : espace centralisé pour piloter l'ensemble du business et des clients.`,
+    tech: ["React Native", "Node.js", "Stripe", "PostgreSQL", "TypeScript"],
+    github: "https://github.com/diego75009/coachHub",
+    images: [
+      "/CoachHub/acceuil.png",
+      "/CoachHub/calendrier.png",
+      "/CoachHub/dashboard.png",
+    ],
   },
 ];
