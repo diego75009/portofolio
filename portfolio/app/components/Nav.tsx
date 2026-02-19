@@ -5,11 +5,12 @@ import { useEffect, useState, useRef } from "react";
 const navLinks = [
   { label: "Work", href: "#work" },
   { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#about" },
 ];
 
-const sectionIds = ["hero", "work", "skills", "about"];
+const sectionIds = ["hero", "work", "skills", "experience", "about"];
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -86,13 +87,6 @@ export default function Nav() {
       >
         <nav className="flex items-center justify-between px-8 md:px-16 lg:px-24 h-[72px]">
           {/* Monogram */}
-          <a
-            href="#hero"
-            onClick={(e) => handleNavClick(e, "#hero")}
-            className="font-display font-[800] text-accent text-xl tracking-wider"
-          >
-            DL
-          </a>
 
           {/* Desktop links */}
           <ul className="hidden md:flex items-center gap-8">

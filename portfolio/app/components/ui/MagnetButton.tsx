@@ -6,6 +6,7 @@ interface MagnetButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
   href?: string;
+  download?: boolean;
   variant?: "solid" | "outline";
   className?: string;
 }
@@ -14,6 +15,7 @@ export default function MagnetButton({
   children,
   onClick,
   href,
+  download,
   variant = "solid",
   className = "",
 }: MagnetButtonProps) {
@@ -28,7 +30,7 @@ export default function MagnetButton({
   const combined = `${baseClasses} ${variantClasses} ${className}`;
 
   const inner = href ? (
-    <a href={href} className={combined}>
+    <a href={href} download={download} className={combined}>
       {children}
     </a>
   ) : (

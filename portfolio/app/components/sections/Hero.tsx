@@ -75,18 +75,21 @@ export default function Hero() {
         </div>
 
         {/* CTAs */}
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
           <MagnetButton variant="solid" onClick={() => scrollTo("work")}>
             View Work
           </MagnetButton>
           <MagnetButton variant="outline" onClick={() => scrollTo("about")}>
             Get in Touch
           </MagnetButton>
+          <MagnetButton variant="outline" href="/Diego_Lacroix_CV.pdf" download>
+            Download CV ↓
+          </MagnetButton>
         </div>
       </div>
 
       {/* Scroll arrow */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce-arrow">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce-arrow z-[1001]">
         <span className="text-text-muted text-xs tracking-widest uppercase font-body">
           Scroll
         </span>
@@ -106,6 +109,7 @@ export default function Hero() {
           />
         </svg>
       </div>
+
     </section>
   );
 }

@@ -3,7 +3,6 @@
 import dynamic from "next/dynamic";
 import AnimatedContent from "@/app/components/ui/AnimatedContent";
 import SectionLabel from "@/app/components/ui/SectionLabel";
-import CountUp from "@/app/components/ui/CountUp";
 
 const FranceMap = dynamic(() => import("@/app/components/ui/FranceMap"), {
   ssr: false,
@@ -67,43 +66,6 @@ export default function AboutContact() {
             <p className="font-body text-text-muted leading-relaxed mb-12">
               Open to new opportunities — freelance or full-time.
             </p>
-
-            {/* Stats */}
-            <div className="flex gap-12">
-              <div>
-                <div
-                  className="font-display font-[800] text-text leading-none"
-                  style={{ fontSize: "var(--text-xl)" }}
-                >
-                  <CountUp to={3} duration={2} />+
-                </div>
-                <span className="text-text-muted text-xs tracking-widest uppercase font-body mt-1 block">
-                  Years exp.
-                </span>
-              </div>
-              <div>
-                <div
-                  className="font-display font-[800] text-text leading-none"
-                  style={{ fontSize: "var(--text-xl)" }}
-                >
-                  <CountUp to={12} duration={2} />+
-                </div>
-                <span className="text-text-muted text-xs tracking-widest uppercase font-body mt-1 block">
-                  Projects
-                </span>
-              </div>
-              <div>
-                <div
-                  className="font-display font-[800] text-text leading-none"
-                  style={{ fontSize: "var(--text-xl)" }}
-                >
-                  <CountUp to={100} duration={2} />%
-                </div>
-                <span className="text-text-muted text-xs tracking-widest uppercase font-body mt-1 block">
-                  Remote-ready
-                </span>
-              </div>
-            </div>
           </div>
         </AnimatedContent>
 
@@ -189,9 +151,6 @@ export default function AboutContact() {
       <div className="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <span className="text-text-muted text-sm font-body">
           &copy; 2025 Diego Lacroix
-        </span>
-        <span className="text-text-muted text-sm font-body">
-          Built with Next.js + React Bits
         </span>
       </div>
     </section>

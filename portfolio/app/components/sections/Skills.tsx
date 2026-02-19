@@ -30,7 +30,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="py-24 md:py-32 px-8 md:px-16 lg:px-24 bg-surface"
+      className="relative overflow-hidden py-24 md:py-32 px-8 md:px-16 lg:px-24 bg-surface"
     >
       {/* Header */}
       <AnimatedContent delay={0} duration={0.5}>
@@ -58,7 +58,7 @@ export default function Skills() {
             duration={0.6}
             ease="power2.out"
           >
-            <div className="grid grid-cols-[120px_1fr] md:grid-cols-[200px_1fr] items-baseline py-6 md:py-8 gap-6">
+            <div className="flex flex-col gap-1 py-6 md:py-8 md:grid md:grid-cols-[200px_1fr] md:items-baseline md:gap-6">
               {/* Category */}
               <span className="text-text-muted text-xs font-body tracking-[0.2em] uppercase">
                 {row.category}
@@ -77,6 +77,7 @@ export default function Skills() {
 
       {/* Bottom lime accent strip */}
       <div className="w-full h-1 bg-accent mt-16" />
+
     </section>
   );
 }
