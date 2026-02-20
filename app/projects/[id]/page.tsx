@@ -108,7 +108,7 @@ export default async function ProjectPage({ params }: Props) {
 
           {/* RIGHT — sticky image slider */}
           {hasImages && (
-            <div className="lg:w-1/2 lg:sticky lg:top-0 lg:h-screen border-t border-border lg:border-t-0 lg:border-l">
+            <div className="h-72 sm:h-96 lg:w-1/2 lg:sticky lg:top-0 lg:h-screen border-t border-border lg:border-t-0 lg:border-l">
               <ImageSlider images={project.images!} title={project.title} />
             </div>
           )}

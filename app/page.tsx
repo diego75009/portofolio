@@ -1,7 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import { AnimatePresence } from "motion/react";
+
+// useLayoutEffect on client (before paint), useEffect on server (no-op)
+const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 import Nav from "@/app/components/Nav";
 import Hero from "@/app/components/sections/Hero";
@@ -20,8 +24,18 @@ let hasShownLoading = false;
 export default function Home() {
   const [loaded, setLoaded] = useState(hasShownLoading);
 
+  // Before first paint: check sessionStorage to skip loading on return visits
+  // (handles hard navigations where the module-level var was reset)
+  useIsomorphicLayoutEffect(() => {
+    if (!loaded && sessionStorage.getItem("portfolio_loaded")) {
+      hasShownLoading = true;
+      setLoaded(true);
+    }
+  }, []);
+
   const handleLoadComplete = () => {
     hasShownLoading = true;
+    sessionStorage.setItem("portfolio_loaded", "1");
     setLoaded(true);
   };
 

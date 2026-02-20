@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { lenisInstance } from "@/app/components/ui/LenisProvider";
 
 const navLinks = [
@@ -14,6 +15,7 @@ const navLinks = [
 const sectionIds = ["hero", "work", "skills", "experience", "about"];
 
 export default function Nav() {
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
   const [menuOpen, setMenuOpen] = useState(false);
@@ -72,7 +74,10 @@ export default function Nav() {
     setMenuOpen(false);
     const id = href.replace("#", "");
     const el = document.getElementById(id);
-    if (!el) return;
+    if (!el) {
+      router.push(`/${href}`);
+      return;
+    }
     if (lenisInstance) {
       lenisInstance.scrollTo(el, { offset: -80 });
     } else {

@@ -17,7 +17,7 @@
 
 /* Fluid typography custom props */
 :root {
-  --text-hero: clamp(2.75rem, 13vw, 11.25rem);
+  --text-hero: clamp(2.5rem, 12vw, 11.25rem);
   --text-display: clamp(2.25rem, 6vw, 6rem);
   --text-xl: clamp(1.25rem, 3vw, 2.5rem);
 }
