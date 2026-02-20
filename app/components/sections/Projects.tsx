@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { usePageTransition } from "@/app/components/ui/PageTransition";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SpotlightCard from "@/app/components/ui/SpotlightCard";
@@ -13,7 +13,7 @@ import { projects } from "@/lib/projects";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Projects() {
-  const router = useRouter();
+  const { navigate } = usePageTransition();
   const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
@@ -89,7 +89,7 @@ export default function Projects() {
           >
             <div
               className="block h-full group/card cursor-pointer"
-              onClick={() => router.push(`/projects/${project.id}`)}
+              onClick={() => navigate(`/projects/${project.id}`)}
             >
               <SpotlightCard
                 spotlightColor="rgba(232, 255, 71, 0.07)"

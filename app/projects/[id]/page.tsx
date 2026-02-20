@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import { projects } from "@/lib/projects";
 import Nav from "@/app/components/Nav";
 import SectionLabel from "@/app/components/ui/SectionLabel";
 import ImageSlider from "@/app/components/ui/ImageSlider";
+import BackButton from "@/app/components/ui/BackButton";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ id: p.id }));
@@ -38,12 +38,7 @@ export default async function ProjectPage({ params }: Props) {
           >
             <div className="flex flex-col gap-10">
               {/* Back */}
-              <Link
-                href="/#work"
-                className="inline-flex items-center gap-2 text-text-muted font-body text-sm tracking-wider uppercase hover:text-accent transition-colors self-start"
-              >
-                ← Back
-              </Link>
+              <BackButton />
 
               {/* Title */}
               <div>
