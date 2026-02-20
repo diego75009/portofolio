@@ -33,7 +33,6 @@ L'objectif : transformer un profil brut en candidature compétitive, du CV au pi
       "/PersonalB/4.png",
       "/PersonalB/5.png",
       "/PersonalB/6.png",
-      "/PersonalB/stationF.png",
       "/PersonalB/station.jpg",
       "/PersonalB/1763251145170.jpeg",
       "/PersonalB/Untitled_1.1.2_1.66.3.jpg",
@@ -55,9 +54,9 @@ L'interface utilisateur permet de composer des workflows visuellement, de les te
     github: "https://github.com/danabenadel/Relay-platform",
     images: [
       "/relay/Screenshot_2025-11-02_at_14.18.45.png",
-      "/relay/Screenshot 2026-02-19 at 18-53-11 TEK3 • PROMO 2028 • EPITECH - Presentation.png",
-      "/relay/Screenshot 2026-02-19 at 18-58-57 Connexion - Relay - Relay.png",
-      "/relay/Screenshot 2026-02-19 at 18-59-38 Accueil - Relay - Relay.png",
+      "/relay/relay-2.png",
+      "/relay/relay-3.png",
+      "/relay/relay-4.png",
     ],
   },
   {
@@ -92,8 +91,8 @@ L'objectif est de réduire le temps et la friction liés à la mise en relation 
     tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"],
     images: [
       "/JEB/image.png",
-      "/JEB/Capture d'écran du 2026-02-19 18-42-49.png",
-      "/JEB/Screenshot 2026-02-19 at 18-46-55 Jeb Incubator.png",
+      "/JEB/jeb-2.png",
+      "/JEB/jeb-3.png",
     ],
   },
   {
